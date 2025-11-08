@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Happy Birthday, Vrinda ❤️</title>
+    <style>
+        :root{
+          --bg:#fff8fb;
+          --fg:#2a2a2a;
+          --muted:#6b7280;
+          --primary:#ff4d6d;
+          --primary-2:#ff8fa3;
+          --card:#ffffff;
+          --ring: rgba(255,77,109,.35);
+          --shadow: 0 10px 30px rgba(0,0,0,.08);
+          --radius: 18px;
+        }
+        *{box-sizing:border-box}
+        html,body{height:100%}
+        body{
+          margin:0;
+          font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+          color:var(--fg);
+          background: radial-gradient(1200px 600px at 80% -10%, #ffe0e8 0%, transparent 60%),
+                      radial-gradient(700px 500px at 0% 100%, #ffeef3 0%, transparent 60%),
+                      var(--bg);
+          scroll-behavior: smooth;
+        }
+
+        header {
+          position:sticky; top:0; z-index:20;
+          backdrop-filter:saturate(1.2) blur(8px);
+          background:linear-gradient(to bottom, rgba(255,255,255,.85), rgba(255,255,255,.6));
+          border-bottom:1px solid #f3e6ea;
+        }
+        .inner{ max-width:1200px; margin:0 auto; padding: 18px 20px; }
+        nav{ display:flex; align-items:center; gap:14px; justify-content:space-between; }
+        .brand{ display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px; }
+        .heart{ width:22px; height:22px; display:inline-block; background:var(--primary); transform:rotate(45deg); border-radius:4px; position:relative; box-shadow:0 6px 16px var(--ring); }
+        .heart:before,.heart:after{ content:""; position:absolute; width:22px; height:22px; background:var(--primary); border-radius:50%; }
+        .heart:before{ left:-11px; }
+        .heart:after{ top:-11px; }
+
+        .hero{ padding: 32px 20px 10px; }
+        .hero-card{ background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; }
+        .hero-grid{ display:grid; grid-template-columns: 1fr; }
+
+        .hero-left{ padding:38px; text-align:center; }
+        .kicker{ color:var(--primary); font-weight:800; text-transform:uppercase; letter-spacing:1.6px; font-size:.8rem; }
+        h1{ font-size: clamp(28px, 4vw, 56px); line-height:1.05; margin: 12px 0; }
+        p.lead{ color:#374151; font-size: clamp(16px, 2vw, 20px); }
+        .cta{ display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:16px; }
+        .btn{ appearance:none; border:none; padding:12px 16px; border-radius:12px; font-weight:700; cursor:pointer; }
+        .btn-primary{ background:linear-gradient(180deg,var(--primary),var(--primary-2)); color:white; box-shadow:0 10px 20px var(--ring); }
+        .btn-ghost{ background:#fff; color:#111; border:1px solid #f2c6d1; }
+
+        section{ padding: 40px 20px; }
+        .section-title{ text-align:center; margin-bottom:10px; }
+        .muted{ color:var(--muted); }
+
+        /* gallery */
+        .two-col{ max-width:1200px; margin:0 auto; display:grid; grid-template-columns: 1fr 1fr; gap:28px; align-items:start; }
+        .col{ background:var(--card); padding:18px; border-radius:14px; box-shadow:var(--shadow); border:1px solid #f4e1e7; }
+        .col h3{ margin-top:0; }
+        .col .grid{ display:grid; grid-template-columns: repeat(2,1fr); gap:12px; }
+        .col .card{ grid-column: span 1; border-radius:12px; overflow:hidden; border:1px solid #f7e6ea; padding:8px; background:linear-gradient(180deg, #fff, #fff); }
+        .col .card img{
+          width:100%;
+          height:240px;           /* larger height for better visibility */
+          object-fit:cover;
+          display:block;
+          border-radius:10px;
+          transition: transform 0.28s ease, box-shadow 0.28s ease;
+        }
+        .col .card img:hover{
+          transform: scale(1.03);
+          box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+        }
+
+        @media (max-width: 900px){
+          .two-col{ grid-template-columns: 1fr; }
+          .col .grid{ grid-template-columns: repeat(2, 1fr); }
+        }
+
+        /* highlight animation for letter */
+        .highlight {
+          box-shadow: 0 0 0 6px rgba(255,77,109,0.12), 0 24px 48px rgba(0,0,0,0.06);
+          transform: translateY(-6px);
+          transition: box-shadow .35s ease, transform .25s ease;
+        }
+
+        footer{ text-align:center; color:var(--muted); padding: 30px 20px 60px; }
+    </style>
+</head>
+<body>
+<header>
+    <div class="inner">
+        <nav>
+            <div class="brand"><span class="heart" aria-hidden="true"></span> <span>For Vrinda</span></div>
+            <div class="links" role="navigation" aria-label="Sections">
+                <a href="#gallery">Photos</a>
+                <a href="#letter">Letter</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="inner hero-card">
+            <div class="hero-grid">
+                <div class="hero-left">
+                    <div class="kicker">Happy Birthday, Vrinda!</div>
+                    <h1>To my favourite person</h1>
+                    <p class="lead">You make my world a little brighter every single day. 💌</p>
+                    <div class="cta">
+                        <button class="btn btn-primary" id="viewGallery">View photos</button>
+                        <button class="btn btn-ghost" id="openLetter">Read the letter</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <div class="section-title">
+            <h2 id="galleryTitle">Our Moments</h2>
+        </div>
+
+        <div class="two-col">
+            <div class="col" id="youCol">
+                <h3>You</h3>
+                <div class="grid">
+                    <article class="card">
+                        <img src="V1.jpeg" alt="Vrinda 1" />
+                    </article>
+                    <article class="card">
+                        <img src="V2.jpeg" alt="Vrinda 2" />
+                    </article>
+                </div>
+            </div>
+
+            <div class="col" id="usCol">
+                <h3>Us</h3>
+                <div class="grid">
+                    <article class="card">
+                        <img src="US1.jpeg" alt="Us 1" />
+                    </article>
+                    <article class="card">
+                        <img src="US2.jpeg" alt="Us 2" />
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="letter">
+        <div class="section-title">
+            <h2>My Letter to You</h2>
+        </div>
+        <article class="col" id="letterCard">
+            <h3>Letter</h3>
+            <p style="color:var(--muted)">Happy Birthday, Vrinda! It’s been 7 months since we met, and every day I feel happy that you are in my life. Even though we have been apart after those few months together, I’m glad we decided to keep our relationship going. Being far from each other is hard, but it hasn’t changed how much you mean to me. I want you to know that I really admire your kind heart. You are a strong and caring person, and feeling and showing your emotions is something special about you. Sometimes life can be tough, but I see your strength and bravery. Whenever you feel down, I want to be there to give you a tight hug and remind you that I’m always here for you. I know you might want a friend you can talk to and share everything with. Even if I’m not the female friend you want, as your boyfriend, I’m always here to listen and support you. You don’t have to face things alone because you have me. You have gone through a lot with quiet strength, and that makes me respect you even more. You deserve all the happiness in the world, and I hope your birthday brings you lots of joy and peace. Thank you for being yourself and for letting me be part of your life. I love you very much and look forward to all the time we will share, no matter how far apart we are. Happy birthday, Vrinda. You mean alot to me.</p>
+        </article>
+    </section>
+</main>
+
+<footer id="footer">
+    Made with ❤️ by Sheeram
+</footer>
+
+<script>
+    // small JS to make the buttons work (smooth scroll + highlight)
+    (function(){
+      const viewBtn = document.getElementById('viewGallery');
+      const letterBtn = document.getElementById('openLetter');
+      const gallery = document.getElementById('gallery');
+      const letter = document.getElementById('letter');
+      const letterCard = document.getElementById('letterCard');
+
+      viewBtn.addEventListener('click', () => {
+        // scroll to gallery top with slight offset for sticky header
+        const y = gallery.getBoundingClientRect().top + window.scrollY - 14;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      });
+
+      letterBtn.addEventListener('click', () => {
+        const y = letter.getBoundingClientRect().top + window.scrollY - 14;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+
+        // briefly highlight the letter card so it stands out
+        letterCard.classList.remove('highlight');
+        void letterCard.offsetWidth; // reflow to restart animation
+        letterCard.classList.add('highlight');
+        // remove highlight after 1.2s
+        setTimeout(() => letterCard.classList.remove('highlight'), 1200);
+      });
+
+      // set current year in footer
+      const yearEl = document.getElementById('year');
+      if(yearEl) yearEl.textContent = new Date().getFullYear();
+    })();
+</script>
+</body>
+</html>
+
